@@ -1,0 +1,563 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
+html { 
+  scroll-behavior: smooth; 
+}
+
+:root {
+  --red: #d62828;
+  --dark: #090909;
+  --card: #111118;
+  --line: #222;
+  --grey: #888;
+  --font: 'Poppins', sans-serif;
+}
+
+body { 
+  background: var(--dark); 
+  color: #fff; 
+  font-family: var(--font); 
+}
+
+a, button, .btn-view, .nav-list a, .nav-icons i, .logo { 
+  cursor: pointer; 
+}
+
+/* Header */
+header {
+  position: fixed; 
+  top: 0; 
+  width: 100%; 
+  z-index: 900;
+  background: #090909; 
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  max-width: 1200px; 
+  margin: auto; 
+  padding: 0 30px;
+  height: 64px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between;
+}
+
+.logo { 
+  font-size: 24px; 
+  color: #fff; 
+  text-decoration: none; 
+  font-weight: 600;
+}
+
+.logo span { 
+  color: var(--red); 
+}
+
+.nav-list { 
+  display: flex; 
+  gap: 30px; 
+  list-style: none; 
+}
+
+.nav-list a {
+  font-size: 14px; 
+  color: #bbb; 
+  text-decoration: none;
+}
+
+.nav-list a:hover { 
+  color: #fff; 
+}
+
+.nav-icons i { 
+  font-size: 21px; 
+  color: #bbb; 
+}
+
+.nav-icons i:hover { 
+  color: var(--red); 
+}
+
+/* Hero */
+.hero {
+  height: 100vh; 
+  position: relative;
+  background: url('img/DealerLogo.jpeg') no-repeat center/cover;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  text-align: center;
+}
+
+.hero::before {
+  content: ''; 
+  position: absolute; 
+  inset: 0;
+  background: rgba(0,0,0,.6);
+}
+
+.hero-content { 
+  position: relative; 
+  z-index: 1; 
+  padding: 0 20px; 
+}
+
+.hero-content h1 {
+  font-size: clamp(48px, 7vw, 80px);
+  line-height: 1.1; 
+  margin-bottom: 14px;
+}
+
+.hero-content h1 span { 
+  color: var(--red); 
+}
+
+.hero-content p { 
+  font-size: 16px; 
+  color: #ccc; 
+  margin-bottom: 32px; 
+}
+
+.hero-btns { 
+  display: flex; 
+  gap: 14px; 
+  justify-content: center; 
+  flex-wrap: wrap; 
+}
+
+/* buttons */
+.btn-red {
+  background: var(--red); 
+  color: #fff; 
+  padding: 13px 32px; 
+  border: none;
+  border-radius: 4px; 
+  font-family: var(--font); 
+  font-size: 14px; 
+  font-weight: 600;
+}
+
+.btn-red:hover { 
+  background: #b91c1c; 
+}
+
+.btn-outline {
+  background: transparent; 
+  color: #fff; 
+  padding: 13px 32px;
+  border: 1px solid rgba(255,255,255,.3); 
+  border-radius: 4px;
+  font-family: var(--font); 
+  font-size: 14px;
+}
+
+.btn-outline:hover { 
+  border-color: #fff; 
+}
+
+/* title */
+.section-title { 
+  text-align: center; 
+  padding: 70px 0 40px; 
+}
+
+.section-title h2 { 
+  font-size: 40px; 
+}
+
+.section-title p  { 
+  color: var(--grey); 
+  font-size: 14px; 
+  margin-top: 6px; 
+}
+
+.accent-line { 
+  width: 48px; 
+  height: 3px; 
+  background: var(--red); 
+  margin: 12px auto 0; 
+}
+
+/* cars section */
+.cars-section { 
+  max-width: 1200px; 
+  margin: auto; 
+  padding: 0 30px 80px; 
+}
+
+.cars-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); 
+  gap: 24px; 
+}
+
+.car-card {
+  background: var(--card); 
+  border-radius: 6px; 
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.thumb { 
+  position: relative; 
+  overflow: hidden; 
+  height: 210px; 
+}
+
+.thumb img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+}
+
+.thumb .tag {
+  position: absolute; 
+  top: 12px; 
+  left: 12px;
+  background: rgba(9,9,9,.85); 
+  font-size: 11px; 
+  font-weight: 600;
+  padding: 4px 10px; 
+  border-radius: 20px; 
+  text-transform: uppercase;
+}
+
+.tag.yes { 
+  color: #4ade80; 
+  border: 1px solid #4ade8040; 
+}
+
+.tag.no { 
+  color: #f87171; 
+  border: 1px solid #f8717140; 
+}
+
+.car-body { 
+  padding: 18px 20px 20px; 
+}
+
+.car-body h3 { 
+  font-size: 17px; 
+  font-weight: 600; 
+  margin-bottom: 8px; 
+}
+
+.car-specs { 
+  display: flex; 
+  gap: 14px; 
+  margin-bottom: 14px; 
+  flex-wrap: wrap; 
+}
+
+.spec { 
+  display: flex; 
+  align-items: center; 
+  gap: 5px; 
+  font-size: 12px; 
+  color: #aaa; 
+}
+
+.spec i { 
+  font-size: 14px; 
+  color: var(--red); 
+}
+
+.car-bottom {
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between;
+  padding-top: 14px; 
+  border-top: 1px solid var(--line);
+}
+
+.car-price { 
+  font-size: 24px; 
+  font-weight: 600;
+}
+
+.car-down { 
+  font-size: 11px; 
+  color: var(--grey); 
+  margin-top: 2px; 
+}
+
+.btn-view {
+  background: var(--red); 
+  color: #fff; 
+  border: none; 
+  padding: 9px 20px;
+  border-radius: 4px; 
+  font-family: var(--font); 
+  font-size: 13px; 
+  font-weight: 500;
+}
+
+.btn-view:hover { 
+  background: #b91c1c; 
+}
+
+/* contact*/
+.contact-box { 
+  max-width: 500px; 
+  margin: 0 auto 80px; 
+  padding: 0 30px; 
+}
+
+.contact-inner {
+  background: var(--card); 
+  border: 1px solid var(--line);
+  border-radius: 8px; 
+  padding: 30px; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 10px;
+}
+
+.contact-inner input,
+.contact-inner textarea {
+  width: 100%; 
+  background: #1a1a24; 
+  border: 1px solid #2a2a35;
+  border-radius: 5px; 
+  padding: 11px 14px; 
+  color: #fff;
+  font-family: var(--font); 
+  font-size: 13px;
+}
+
+.contact-inner input:focus,
+.contact-inner textarea:focus { 
+  outline: none; 
+  border-color: var(--red); 
+}
+
+.contact-inner textarea { 
+  height: 110px; 
+  resize: none; 
+}
+
+.send-btn {
+  width: 100%; 
+  padding: 13px; 
+  background: var(--red); 
+  color: #fff; 
+  border: none;
+  border-radius: 5px; 
+  font-family: var(--font); 
+  font-size: 14px; 
+  font-weight: 600;
+}
+
+.send-btn:hover { 
+  background: #b91c1c; 
+}
+
+/* MODAL */
+.overlay {
+  display: none; 
+  position: fixed; 
+  inset: 0; 
+  z-index: 1000;
+  background: rgba(0,0,0,.85); 
+  align-items: center; 
+  justify-content: center; 
+  padding: 20px;
+}
+
+.overlay.open { 
+  display: flex; 
+}
+
+.modal {
+  background: #13131a; 
+  border: 1px solid #222; 
+  border-radius: 8px;
+  width: 100%; 
+  max-width: 640px; 
+  max-height: 90vh; 
+  overflow-y: auto; 
+  position: relative;
+}
+
+.modal-img { 
+  width: 100%; 
+  height: 240px; 
+  object-fit: cover; 
+}
+
+.modal-body { 
+  padding: 24px; 
+}
+
+.modal-body h2 { 
+  font-size: 26px; 
+}
+
+.modal-price { 
+  font-size: 30px; 
+  color: var(--red); 
+  margin: 6px 0 14px; 
+  font-weight: 600;
+}
+
+.modal-desc { 
+  font-size: 14px; 
+  color: #bbb; 
+  line-height: 1.7; 
+  margin-bottom: 18px; 
+}
+
+.modal-specs-grid { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 10px; 
+  margin-bottom: 18px; 
+}
+
+.mspec { 
+  background: #1a1a24; 
+  border-radius: 6px; 
+  padding: 10px 14px; 
+  font-size: 13px; 
+  color: #ccc; 
+}
+
+.mspec strong {
+  display: block; 
+  font-size: 11px; 
+  color: var(--grey);
+  font-weight: 400; 
+  margin-bottom: 2px; 
+  text-transform: uppercase;
+}
+
+.modal-fin {
+  background: #1a1a24; 
+  border-radius: 8px; 
+  padding: 14px 18px;
+  margin-bottom: 22px; 
+  display: flex; 
+  align-items: center; 
+  gap: 12px;
+}
+
+.fin-icon { 
+  font-size: 28px; 
+}
+
+.fin-text h4 { 
+  font-size: 14px; 
+  font-weight: 600; 
+}
+
+.fin-text p { 
+  font-size: 13px; 
+  color: var(--grey); 
+  margin-top: 2px; 
+}
+
+.modal-contact h3 { 
+  font-size: 16px; 
+  font-weight: 600; 
+  margin-bottom: 14px; 
+}
+
+.modal-contact input,
+.modal-contact textarea {
+  width: 100%; 
+  background: #1a1a24; 
+  border: 1px solid #2a2a35;
+  border-radius: 6px; 
+  padding: 11px 14px; 
+  color: #fff;
+  font-family: var(--font); 
+  font-size: 13px; 
+  margin-bottom: 10px;
+}
+
+.modal-contact input:focus,
+.modal-contact textarea:focus { 
+  outline: none; 
+  border-color: var(--red); 
+}
+
+.modal-contact textarea { 
+  height: 90px; 
+  resize: none; 
+}
+
+.modal-close {
+  position: absolute; 
+  top: 12px; 
+  right: 14px;
+  background: rgba(0,0,0,.7); 
+  border: none; 
+  color: #fff; 
+  font-size: 18px;
+  border-radius: 50%; 
+  width: 30px; 
+  height: 30px;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  cursor: pointer;
+}
+
+.modal-close:hover { 
+  background: var(--red); 
+}
+
+/* Footer*/
+footer {
+  border-top: 1px solid var(--line); 
+  padding: 28px 30px;
+  text-align: center; 
+  font-size: 13px; 
+  color: var(--grey);
+}
+
+footer span { 
+  color: var(--red); 
+}
+
+/*mobile desin*/
+
+
+@media (max-width: 768px) {
+  .nav {
+    padding: 0 18px;
+  }
+
+  .nav-list {
+    display: none;
+  }
+
+  .hero-content h1 {
+    font-size: 46px;
+  }
+
+  .cars-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-specs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .car-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .btn-view {
+    width: 100%;
+  }
+}

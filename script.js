@@ -94,7 +94,7 @@ const cars = [
   },
   {
     name: "2023 Tesla Model 3 Performance",
-    img: "img/tesla blue.jpeg",
+    img: "img/Tesla Blue.jpeg",
     desc: "Electric car with fast acceleration and long range.",
     engine: "Electric AWD",
     miles: "11,600 mi",
